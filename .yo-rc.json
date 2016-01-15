@@ -37,8 +37,8 @@
         "module": "ngResource"
       },
       "router": {
-        "key": "angular-route",
-        "module": "ngRoute"
+        "key": "ui-router",
+        "module": "ui.router"
       },
       "ui": {
         "key": "bootstrap",
@@ -53,9 +53,9 @@
         "extension": "scss"
       },
       "jsPreprocessor": {
-        "key": "typescript",
-        "extension": "ts",
-        "srcExtension": "ts"
+        "key": "noJsPrepro",
+        "extension": "js",
+        "srcExtension": "js"
       },
       "htmlPreprocessor": {
         "key": "noHtmlPrepro",

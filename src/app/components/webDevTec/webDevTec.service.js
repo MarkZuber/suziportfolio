@@ -1,21 +1,13 @@
-export interface ITecThing {
-  rank: number;
-  title: string;
-  url: string;
-  description: string;
-  logo: string;
-}
+(function() {
+  'use strict';
 
-export class WebDevTecService {
-  public data: ITecThing[];
-
-  public get tec(): ITecThing[] {
-    return this.data;
-  }
+  angular
+      .module('suziweb')
+      .service('webDevTec', webDevTec);
 
   /** @ngInject */
-  constructor () {
-    var rawData = [
+  function webDevTec() {
+    var data = [
       {
         'title': 'AngularJS',
         'url': 'https://angularjs.org/',
@@ -69,18 +61,14 @@ export class WebDevTecService {
         'url': 'https://github.com/sass/node-sass',
         'description': 'Node.js binding to libsass, the C version of the popular stylesheet preprocessor, Sass.',
         'logo': 'node-sass.png'
-      },
-      {
-        'title': 'TypeScript',
-        'url': 'http://www.typescriptlang.org/',
-        'description': 'TypeScript, a typed superset of JavaScript that compiles to plain JavaScript.',
-        'logo': 'typescript.png'
       }
     ];
 
-    this.data = rawData.map((awesomeThing: ITecThing) => {
-      awesomeThing.rank = Math.random();
-      return awesomeThing;
-    });
+    this.getTec = getTec;
+
+    function getTec() {
+      return data;
+    }
   }
-}
+
+})();
